@@ -1,0 +1,50 @@
+﻿@page
+@model DazyBanychMVC.Pages.PackTypes.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>PackType</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PackType.Name" class="control-label"></label>
+                <input asp-for="PackType.Name" class="form-control" />
+                <span asp-validation-for="PackType.Name" class="text-danger"></span>
+                <span class="text-info ">Name can NOT be changed later</span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PackType.MinWeight" class="control-label"></label>
+                <input asp-for="PackType.MinWeight" class="form-control" />
+                <span asp-validation-for="PackType.MinWeight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PackType.MaxWeight" class="control-label"></label>
+                <input asp-for="PackType.MaxWeight" class="form-control" />
+                <span asp-validation-for="PackType.MaxWeight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PackType.Price" class="control-label"></label>
+                <input asp-for="PackType.Price" class="form-control" />
+                <span asp-validation-for="PackType.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

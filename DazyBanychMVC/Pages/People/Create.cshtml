@@ -1,0 +1,59 @@
+﻿@page
+@model DazyBanychMVC.Pages.People.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Person</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Person.Name" class="control-label"></label>
+                <input asp-for="Person.Name" class="form-control" />
+                <span asp-validation-for="Person.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Person.Surname" class="control-label"></label>
+                <input asp-for="Person.Surname" class="form-control" />
+                <span asp-validation-for="Person.Surname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Person.City" class="control-label"></label>
+                <input asp-for="Person.City" class="form-control" />
+                <span asp-validation-for="Person.City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Person.Street" class="control-label"></label>
+                <input asp-for="Person.Street" class="form-control" />
+                <span asp-validation-for="Person.Street" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Person.BuildingNo" class="control-label"></label>
+                <input asp-for="Person.BuildingNo" class="form-control" />
+                <span asp-validation-for="Person.BuildingNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Person.TelNo" class="control-label"></label>
+                <input asp-for="Person.TelNo" class="form-control" />
+                <span asp-validation-for="Person.TelNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

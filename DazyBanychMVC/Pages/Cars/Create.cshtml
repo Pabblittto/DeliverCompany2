@@ -1,0 +1,53 @@
+﻿@page
+@model DazyBanychMVC.Pages.Cars.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Car</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Car.DepartmentId" class="control-label"></label>
+                <select asp-for="Car.DepartmentId" class ="form-control" asp-items="ViewBag.DepartmentId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Car.VIN" class="control-label"></label>
+                <input asp-for="Car.VIN" class="form-control" />
+                <span asp-validation-for="Car.VIN" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Car.Mark" class="control-label"></label>
+                <input asp-for="Car.Mark" class="form-control" />
+                <span asp-validation-for="Car.Mark" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Car.Model" class="control-label"></label>
+                <input asp-for="Car.Model" class="form-control" />
+                <span asp-validation-for="Car.Model" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Car.PolicyNumber" class="control-label"></label>
+                <input asp-for="Car.PolicyNumber" class="form-control" />
+                <span asp-validation-for="Car.PolicyNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

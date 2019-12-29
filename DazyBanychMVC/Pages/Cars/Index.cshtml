@@ -1,0 +1,60 @@
+﻿@page
+@model DazyBanychMVC.Pages.Cars.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Cars</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Department)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].VIN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Mark)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Car[0].PolicyNumber)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Car) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Department.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VIN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PolicyNumber)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.RegistrationNumber">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.RegistrationNumber">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.RegistrationNumber">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

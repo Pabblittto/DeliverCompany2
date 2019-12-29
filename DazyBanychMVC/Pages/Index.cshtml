@@ -1,0 +1,40 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1>Menu</h1>
+</div>
+<div class="text-center row">
+    <div class="col">
+        <div class="border border-primary m-1">
+            <h4>Administration</h4>
+            <a class="nav-link" asp-area="" asp-page="/Departments/Index">Departments</a>
+            <a class="nav-link" asp-area="" asp-page="/cars/Index">Cars</a>
+            <a class="nav-link" asp-area="" asp-page="/Contracts/Index">Contracts</a>
+            <a class="nav-link" asp-area="" asp-page="/Positions/Index">Positions</a>
+            <a class="nav-link" asp-area="" asp-page="/workers/Index">Workers</a>
+        </div>
+        <div class="border border-primary m-1">
+            <h4>Orders</h4>
+            <a class="nav-link" asp-area="" asp-page="/Invoices/Index">Invoices</a>
+            <a class="nav-link" asp-area="" asp-page="/Orders/Index">Orders</a>
+            <a class="nav-link" asp-area="" asp-page="/Packs/Index">Packs</a>
+        </div>
+    </div>
+    <div class="col">
+        <div class="border border-primary m-1">
+            <h4>Data Bases</h4>
+            <a class="nav-link" asp-area="" asp-page="/chambers/Index">Chambers</a>
+            <a class="nav-link" asp-area="" asp-page="/chambertypes/Index">Chamber Types</a>
+            <a class="nav-link" asp-area="" asp-page="/parcellockers/Index">Parcel Lockers</a>
+            <a class="nav-link" asp-area="" asp-page="/packtypes/Index">Pack Types</a>
+            <a class="nav-link" asp-area="" asp-page="/people/Index">Customers</a>
+            <a class="nav-link" asp-area="" asp-page="/regions/Index">Regions</a>
+            <a class="nav-link" asp-area="" asp-page="/streets/Index">Streets</a>
+
+        </div>
+    </div>
+</div>

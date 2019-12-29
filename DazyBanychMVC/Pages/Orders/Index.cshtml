@@ -1,0 +1,60 @@
+﻿@page
+@model DazyBanychMVC.Pages.Orders.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Orders</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].department)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].Sender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].Receiver)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].State)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].pack)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Order) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.department.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sender.Name) @Html.DisplayFor(modelItem => item.Sender.Surname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Receiver.Name) @Html.DisplayFor(modelItem => item.Receiver.Surname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.State)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pack.Id)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

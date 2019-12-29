@@ -1,0 +1,66 @@
+﻿@page
+@model DazyBanychMVC.Pages.Departments.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Departments</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Department[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Department[0].BankAccountNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Department[0].Street)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Department[0].BuildingNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Department[0].OfficeTelNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Department[0].ManagerTelNo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Department) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BankAccountNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Street)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BuildingNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OfficeTelNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ManagerTelNo)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

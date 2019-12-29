@@ -1,0 +1,48 @@
+﻿@page
+@model DazyBanychMVC.Pages.ChamberTypes.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Chamber Types</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ChamberType[0].TypeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ChamberType[0].Height)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ChamberType[0].Width)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ChamberType) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Height)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Width)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.TypeName">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.TypeName">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.TypeName">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
